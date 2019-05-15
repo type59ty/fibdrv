@@ -60,6 +60,7 @@ static ssize_t fib_read(struct file *file,
                         size_t size,
                         loff_t *offset)
 {
+    printk(KERN_INFO "Got a read, let's calculate the fibonacci number at that offset, %lld", *offset);
     return (ssize_t) fib_sequence(*offset);
 }
 
